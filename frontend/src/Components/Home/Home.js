@@ -7,8 +7,6 @@ import { Row, Col, Button } from "reactstrap";
 export default function Home() {
   return (
     <div>
-      <Images />
-      <br />
       <Row
         style={{
           alignItems: "center",

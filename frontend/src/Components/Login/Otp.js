@@ -1,38 +1,53 @@
 import React from "react";
 import "./style.css";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import {
+	Card,
+	CardBody,
+	CardTitle,
+	CardText,
+	Button,
+	Form,
+	FormGroup,
+	Label,
+	Input,
+	CardSubtitle,
+} from "reactstrap";
+import { Link } from "react-router-dom";
 
 export default function Otp() {
 	return (
-		<div>
-			<div className="form">
-				<div>
-					<div className="header-form">
-						<h2>LOGIN</h2>
-						<h5>For Student</h5>
+		<div className="container-form">
+			<Card className="form">
+				<CardBody>
+					<div className="header">
+						<CardTitle style={{ fontWeight: "bolder" }} className="header-main">
+							LOGIN
+						</CardTitle>
+						<CardSubtitle className="header-subtitle">
+							&nbsp;&nbsp;FOR STUDENTS
+						</CardSubtitle>
 					</div>
-					<br/>
-					<br/>
-					<br/>
+					<br />
+					<br />
 					<Form>
 						<FormGroup>
-							<Label
-								for="exampleEmail"
-							>
-								Enter the OTP
-							</Label>
+							<Label for="exampleEmail">Enter the Otp</Label>
 							<Input
 								type="text"
 								name="otp"
 								id="exampleEmail"
-								placeholder="Enter Otp"
+								placeholder="Enter the OTP"
 							/>
-							<br/>
-							<Button style={{backgroundColor:"#727dbd"}} block>Login</Button>
+							<br />
+							<Link to="/login">
+								<Button style={{ backgroundColor: "#727dbd" }} block>
+									Login
+								</Button>
+							</Link>
 						</FormGroup>
 					</Form>
-				</div>
-			</div>
+				</CardBody>
+			</Card>
 		</div>
 	);
 }

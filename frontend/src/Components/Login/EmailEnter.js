@@ -1,38 +1,53 @@
 import React from "react";
 import "./style.css";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import {
+	Card,
+	CardBody,
+	CardTitle,
+	CardText,
+	Button,
+	Form,
+	FormGroup,
+	Label,
+	Input,
+	CardSubtitle,
+} from "reactstrap";
+import { Link } from "react-router-dom";
 
 export default function EmailEnter() {
 	return (
-		<div>
-			<div className="form">
-				<div>
-					<div className="header-form">
-						<h2>LOGIN</h2>
-						<h5>For Student</h5>
+		<div className="container-form">
+			<Card className="form">
+				<CardBody>
+					<div className="header">
+						<CardTitle style={{ fontWeight: "bolder" }} className="header-main">
+							LOGIN
+						</CardTitle>
+						<CardSubtitle className="header-subtitle">
+							&nbsp;&nbsp;FOR STUDENTS
+						</CardSubtitle>
 					</div>
-					<br/>
-					<br/>
-					<br/>
+					<br />
+					<br />
 					<Form>
 						<FormGroup>
-							<Label
-								for="exampleEmail"
-							>
-								Institute Email-id
-							</Label>
+							<Label for="exampleEmail">Institute Email-id</Label>
 							<Input
 								type="email"
 								name="email"
 								id="exampleEmail"
 								placeholder="Institute Email-id"
 							/>
-							<br/>
-							<Button style={{backgroundColor:"#727dbd"}} block>Next</Button>
+							<br />
+							<Link to="/otp">
+								<Button style={{ backgroundColor: "#727dbd" }} block>
+									Next
+								</Button>
+							</Link>
 						</FormGroup>
 					</Form>
-				</div>
-			</div>
+				</CardBody>
+			</Card>
 		</div>
 	);
 }

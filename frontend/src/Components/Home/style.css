@@ -1,5 +1,6 @@
 .topCircle {
   position: absolute;
+  width: 15vw;
   top: 0;
   left: 0;
   z-index: -1;
@@ -7,18 +8,26 @@
 }
 .topCircle1 {
   position: absolute;
-  left: 40em;
+  width: 18vw;
+  left: 70vw;
   z-index: -1;
   animation: floating 3s ease-in-out infinite;
 }
 .topCircle2 {
   position: absolute;
-  top: 10em;
-  left: 35em;
+  width: 20vw;
+  top: 10vh;
+  left: 35vw;
   z-index: -1;
   animation: floating-1 3s ease-in-out infinite;
 }
-
+.triangle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 90vh;
+}
 @keyframes floating {
   0% {
     top: 0em;

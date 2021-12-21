@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
 import Images from "./Images";
 import main from "../../Images/MainImage.png";
 import "./style.css";
@@ -18,15 +17,17 @@ export default function Home() {
         }}
       >
         <Col sm="6">
-          <h1 style={{ color: "#727dbd", fontWeight: "bold" }}>
+          <h1 style={{ color: "#727dbd", fontWeight:"bolder" }}>
             Lorem Ipsum Text
           </h1>
-          <p style={{ borderLeft: "4px solid #727dbd", padding: "2%" }}>
+          <p style={{ borderLeft: "4px solid #727dbd", padding: "2%" , color:"black"}}>
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blandit praesentium voluptatum delis atque corrupti quos dolores
           </p>
           <Button
             style={{
+              width:"200px",
+              height:"50px",
               backgroundColor: "#727dbd",
               color: "white",
               border: "none",

@@ -1,0 +1,27 @@
+tr{
+    height: 60px;
+    align-items: center;
+    justify-self: center;
+    vertical-align: middle;
+}
+
+tr:nth-child(even){
+    background-color: #E0DEF1;
+}
+tr:nth-child(odd){
+    background-color: white;
+}
+
+.table-header{
+    background-color: #E0DEF1 !important;
+}
+
+.studentPoint{
+    position: relative;
+    margin: 0 6vw;
+    top: 13vh;
+}
+.studentPoint h2{
+    font-size: 40px;
+    font-weight: bolder;
+}

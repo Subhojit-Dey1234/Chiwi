@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react";
-import Images from "./Images";
 import main from "../../Images/MainImage.png";
 import "./style.css";
 import logo from "./logo.svg";
@@ -7,12 +6,9 @@ import {
   Row,
   Col,
   Button,
-  UncontrolledCarousel,
   CardGroup,
-  CardText,
   CardTitle,
   CardBody,
-  CardHeader,
   CardImg,
   Card,
 } from "reactstrap";

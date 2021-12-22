@@ -5,12 +5,10 @@ import {
   CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
-  Button,
   CardGroup,
 } from "reactstrap";
 import logo from "./logo.svg";
-import { Container, Row, Col } from "reactstrap";
+import {Row, Col } from "reactstrap";
 const Example = (props) => {
   return (
     <div>

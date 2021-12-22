@@ -6,17 +6,24 @@ import Otp from "./Components/Login/Otp";
 import Images from "./Components/Home/Images";
 import EmailEnter from "./Components/Login/EmailEnter";
 import News from "./Components/News/index";
+import StudentPoint from "./Components/StudentPoint";
+import { useState } from "react";
+import Navbar from './Components/Navbar/Navbar'
 
 function App() {
+	const [ isNav, setNav ] = useState(false);
+
 	return (
 		<div>
-			<Images />
+			<Images/>
+			<Navbar/>
 			<Router>
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/login" element={<EmailEnter />} />
 					<Route path="/otp" element={<Otp />} />
 					<Route path="/news" element={<News />} />
+					<Route path="/studentPoint" element={<StudentPoint />} />
 				</Routes>
 			</Router>
 		</div>

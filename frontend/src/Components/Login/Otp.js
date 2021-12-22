@@ -31,7 +31,7 @@ export default function Otp() {
 					<br />
 					<Form>
 						<FormGroup>
-							<Label for="exampleEmail">Enter the Otp</Label>
+							<Label for="exampleEmail">Enter the OTP</Label>
 							<Input
 								type="text"
 								name="otp"
@@ -39,7 +39,7 @@ export default function Otp() {
 								placeholder="Enter the OTP"
 							/>
 							<br />
-							<Link to="/login">
+							<Link to="/login" style={{textDecoration:"none"}}>
 								<Button style={{ backgroundColor: "#727dbd" }} block>
 									Login
 								</Button>

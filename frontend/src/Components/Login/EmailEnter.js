@@ -39,7 +39,7 @@ export default function EmailEnter() {
 								placeholder="Institute Email-id"
 							/>
 							<br />
-							<Link to="/otp">
+							<Link to="/otp" style={{textDecoration:"none"}}>
 								<Button style={{ backgroundColor: "#727dbd" }} block>
 									Next
 								</Button>

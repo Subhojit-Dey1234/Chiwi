@@ -7,12 +7,10 @@ import Images from "./Components/Home/Images";
 import EmailEnter from "./Components/Login/EmailEnter";
 import News from "./Components/News/index";
 import StudentPoint from "./Components/StudentPoint";
-import { useState } from "react";
 import Navbar from './Components/Navbar/Navbar'
+import Footer from "./Components/Footer/Footer";
 
 function App() {
-	const [ isNav, setNav ] = useState(false);
-
 	return (
 		<div>
 			<Images/>
@@ -26,6 +24,7 @@ function App() {
 					<Route path="/studentPoint" element={<StudentPoint />} />
 				</Routes>
 			</Router>
+			<Footer/>
 		</div>
 	);
 }

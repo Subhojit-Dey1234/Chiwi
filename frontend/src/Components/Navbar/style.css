@@ -7,6 +7,10 @@
     top: 2vh;
     height: 10vh;
 }
+.navbar-el a{
+    text-decoration: none;
+    color: black;
+}
 
 .navbar-el li{
     padding: 10px;
@@ -22,6 +26,12 @@
     color: white;
 }
 
+.navbar-el li:hover a{
+    color: white;
+}
+.navbar-list{
+    visibility: visible;
+}
 
 @media screen and (max-width:600px){
     .navbar-el ul{

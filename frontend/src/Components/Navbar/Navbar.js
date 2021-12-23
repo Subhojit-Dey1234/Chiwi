@@ -1,30 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./style.css";
-
 export default function Navbar() {
-	const [isHam,setHam] = useState(false);
-	useEffect(()=>{
-		if(window.innerWidth < 600){
-			setHam(true);
+	const [isHam, setHam] = useState(true);
+	const navEl = useRef(null);
+	useEffect(() => {
+		if (window.innerWidth < 700) {
+			setHam(false);
 		}
-	},[])
+	}, []);
 	return (
-		
 		<div>
 			<div className="navbar-el">
-				<div className="hamburger" onClick={()=>{
-					setHam(!isHam)
-				}}>
+				<div
+					className="hamburger"
+					onClick={() => {
+						setHam(!isHam);
+					}}
+				>
 					<div></div>
 					<div></div>
 					<div></div>
 				</div>
-				<div style={{display:isHam ? "none" : ""}}>
+				<div
+					ref={navEl}
+					className="navbar-list"
+					style={{ visibility: isHam ? "visible" : "hidden" }}
+				>
 					<ul>
-						<li>Home</li>
-						<li>Student's Point</li>
-						<li>Login</li>
-						<li>News</li>
+						<a href="/">
+							<li>Home</li>
+						</a>
+						<a href="/studentPoint">
+							<li>Student's Point</li>
+						</a>
+						<a href="/login">
+							<li>Login</li>
+						</a>
+						<a href="/news">
+							<li>News</li>
+						</a>
 					</ul>
 				</div>
 			</div>

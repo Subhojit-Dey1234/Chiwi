@@ -19,7 +19,6 @@ tr:nth-child(odd){
 .studentPoint{
     position: relative;
     margin: 0 6vw;
-    top: 13vh;
 }
 .studentPoint h2{
     font-size: 40px;

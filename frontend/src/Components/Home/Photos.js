@@ -1,31 +1,31 @@
 export const photos = [
     {
-      src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
+      src: "3.jfif",
       width: 4,
       height: 3
     },
     {
-      src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+      src: "5.jpg",
       width: 1,
       height: 1
     },
     {
-      src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+      src: "7.jpg",
       width: 3,
       height: 4
     },
     {
-      src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
+      src: "9.jpg",
       width: 3,
       height: 4
     },
     {
-      src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
+      src: "8.jpg",
       width: 3,
       height: 3.25
     },
     {
-      src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
+      src: "2.jpg",
       width: 4,
       height: 3
     }

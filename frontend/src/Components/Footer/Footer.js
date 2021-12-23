@@ -15,9 +15,9 @@ export default function Footer() {
 	return (
 		<div className="footer">
 			<Container>
-				<Row>
+				<Row style={{padding:"2% 0%"}}>
 					<Col sm="4">
-						<Card className="footer-card">
+						<Card className="footer-card" style={{border:"none"}}>
 							<CardBody>
 								<CardTitle className="footer-header">TSG IIT KGP</CardTitle>
 								<CardText>
@@ -29,7 +29,7 @@ export default function Footer() {
 						</Card>
 					</Col>
 					<Col sm="4" xs="6">
-						<Card className="footer-card">
+						<Card className="footer-card" style={{border:"none"}}>
 							<CardBody>
 								<CardTitle className="footer-header">Reach Us</CardTitle>
 								<CardSubtitle>Counselling Centre</CardSubtitle>
@@ -39,8 +39,8 @@ export default function Footer() {
 							</CardBody>
 						</Card>
 					</Col>
-					<Col sm="4" xs="6">
-						<Card className="footer-card">
+					<Col sm="4" xs="6" >
+						<Card className="footer-card" style={{border:"none"}}>
 							<CardBody>
 								<CardTitle className="footer-header">Quick Link</CardTitle>
 								<CardSubtitle>Website</CardSubtitle>

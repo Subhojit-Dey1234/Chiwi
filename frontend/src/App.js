@@ -24,6 +24,7 @@ function App() {
 					<Route path="/studentPoint" element={<StudentPoint />} />
 				</Routes>
 			</Router>
+			<br/><br/>
 			<Footer/>
 		</div>
 	);

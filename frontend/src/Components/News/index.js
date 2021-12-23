@@ -12,7 +12,7 @@ import {Row, Col } from "reactstrap";
 const Example = (props) => {
   return (
     <div>
-      <br/><br/><br/><br/><br/>
+      <br/><br/><br/>
       <h2 style={{ textAlign: "left", margin: "3% 5%", fontWeight: "bolder" }}>
         Get Latest News!
       </h2>

@@ -14,7 +14,6 @@ import {
 } from "reactstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-// import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { Calendar } from "@natscale/react-calendar";
 import "@natscale/react-calendar/dist/main.css";
@@ -153,7 +152,7 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <Calendar value={value} onChange={onChange} />
+          <Calendar value={value} onChange={onChange} />
           </Card>
           <Card
             style={{

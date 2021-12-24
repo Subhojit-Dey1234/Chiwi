@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import logo from "../../Images/Logo.png";
 import "./style.css";
 export default function Navbar() {
 	const [isHam, setHam] = useState(true);
@@ -10,6 +11,9 @@ export default function Navbar() {
 	}, []);
 	return (
 		<div>
+			<div>
+				<img src={logo} alt="logo" className="logo" />
+			</div>
 			<div className="navbar-el">
 				<div
 					className="hamburger"
@@ -21,6 +25,7 @@ export default function Navbar() {
 					<div></div>
 					<div></div>
 				</div>
+
 				<div
 					ref={navEl}
 					className="navbar-list"

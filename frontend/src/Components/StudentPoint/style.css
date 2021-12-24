@@ -1,5 +1,5 @@
 tr {
-  /* height: 60px; */
+  height: 60px;
   align-items: center;
   justify-self: center;
   vertical-align: middle;
@@ -23,4 +23,14 @@ tr:nth-child(odd) {
 .studentPoint h2 {
   /* font-size: 40px; */
   font-weight: bolder;
+}
+
+@media screen and (max-width: 500px) {
+  tr{
+    font-size: 12px;
+  }
+  .dropdown-table{
+    font-size: 10px !important;
+  }
+  
 }

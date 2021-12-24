@@ -1,12 +1,13 @@
 import React, {useState} from "react";
-import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
-import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+// import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+// import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import {
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
 } from "reactstrap";
+import TableChange from "./TableChange";
 
 export default function TableExample(props) {
   const [isOpen, setOpen] = useState(false);
@@ -34,7 +35,7 @@ export default function TableExample(props) {
         }}
       >
         <h6>Show Only</h6>
-        <Dropdown toggle={toggle} isOpen={isOpen}>
+        <Dropdown className="dropdown-table" toggle={toggle} isOpen={isOpen}>
           <DropdownToggle caret>Year</DropdownToggle>
           <DropdownMenu>
             <DropdownItem>1st Year</DropdownItem>
@@ -42,7 +43,7 @@ export default function TableExample(props) {
             <DropdownItem>3rd Year</DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        <Dropdown toggle={toggle1} isOpen={isOpen1}>
+        <Dropdown className="dropdown-table" toggle={toggle1} isOpen={isOpen1}>
           <DropdownToggle caret>Dept.</DropdownToggle>
           <DropdownMenu>
             <DropdownItem>Civil Engg.</DropdownItem>
@@ -52,7 +53,7 @@ export default function TableExample(props) {
         </Dropdown>
       </div>
       <br />
-      <Table>
+      {/* <Table>
         <Thead>
           <Tr
             style={{
@@ -103,7 +104,8 @@ export default function TableExample(props) {
             <Td>@twitter</Td>
           </Tr>
         </Tbody>
-      </Table>
+      </Table> */}
+      <TableChange/>
       <br />
       <br />
 	  <br/>
@@ -116,7 +118,7 @@ export default function TableExample(props) {
         }}
       >
         <h6>Show Only</h6>
-        <Dropdown toggle={toggle2} isOpen={isOpen2}>
+        <Dropdown className="dropdown-table" toggle={toggle2} isOpen={isOpen2}>
           <DropdownToggle caret>Profile/Domain</DropdownToggle>
           <DropdownMenu>
             <DropdownItem>SDE</DropdownItem>
@@ -126,7 +128,7 @@ export default function TableExample(props) {
         </Dropdown>
       </div>
       <br />
-      <Table>
+      {/* <Table>
         <Thead>
           <Tr
             style={{
@@ -177,7 +179,8 @@ export default function TableExample(props) {
             <Td>@twitter</Td>
           </Tr>
         </Tbody>
-      </Table>
+      </Table> */}
+      <TableChange/>
     </div>
   );
 }

@@ -10,14 +10,11 @@ export default function Navbar() {
 	}, []);
 	return (
 		<div>
-<<<<<<< Updated upstream
-=======
-			<div>
+			{/* <div>
 				<a href="/" >
 					<img src={logo} alt="logo" className="logo" />
 				</a>
-			</div>
->>>>>>> Stashed changes
+			</div> */}
 			<div className="navbar-el">
 				<div
 					className="hamburger"
@@ -35,23 +32,23 @@ export default function Navbar() {
 					style={{ visibility: isHam ? "visible" : "hidden" }}
 				>
 					<ul>
-						<a href="/">
+						<a href="/" style={{textDecoration:"none", color:"black"}}>
 							<li>Home</li>
 						</a>
-						<a href="/studentPoint">
+						<a href="/studentPoint" style={{textDecoration:"none", color:"black"}}>
 							<li>Student's Point</li>
 						</a>
-						<a href="/loginstudent">
+						<a href="/loginstudent" style={{textDecoration:"none", color:"black"}}>
 							<li>
-								Login <small style={{ opacity: 0.6 }}>( for students )</small>{" "}
+								Login <small style={{ opacity: 0.6 }}>( Students )</small>{" "}
 							</li>
 						</a>
-						<a href="/loginofficials">
+						<a href="/loginofficials" style={{textDecoration:"none", color:"black"}}>
 							<li>
-								Login <small style={{ opacity: 0.6 }}> ( for officials )</small>
+								Login <small style={{ opacity: 0.6 }}> ( Officials )</small>
 							</li>
 						</a>
-						<a href="/news">
+						<a href="/news" style={{textDecoration:"none", color:"black"}}>
 							<li>News</li>
 						</a>
 					</ul>

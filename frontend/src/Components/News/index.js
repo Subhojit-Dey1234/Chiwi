@@ -8,6 +8,10 @@ import {
   CardGroup,
 } from "reactstrap";
 import logo from "./logo.svg";
+import logo1 from "./logo1.png";
+import logo2 from "./logo2.png";
+import logo3 from "./logo3.png";
+import logo4 from "./logo4.png";
 import {Row, Col } from "reactstrap";
 const Example = (props) => {
   return (
@@ -21,7 +25,7 @@ const Example = (props) => {
       >
         <Row>
           <Col sm="3">
-            <CardImg top width="auto" src={logo} alt="Card image cap" />
+            <CardImg top width="auto" src={logo4} alt="Card image cap" />
           </Col>
           <Col sm="9">
             <CardBody>
@@ -42,7 +46,7 @@ const Example = (props) => {
       >
         <Row>
           <Col sm="3">
-            <CardImg top width="auto" src={logo} alt="Card image cap" />
+            <CardImg top width="auto" src={logo4} alt="Card image cap" />
           </Col>
           <Col sm="9">
             <CardBody>
@@ -63,7 +67,7 @@ const Example = (props) => {
       >
         <Row>
           <Col sm="3">
-            <CardImg top width="auto" src={logo} alt="Card image cap" />
+            <CardImg top width="auto" src={logo4} alt="Card image cap" />
           </Col>
           <Col sm="9">
             <CardBody>
@@ -89,7 +93,7 @@ const Example = (props) => {
         </p>
         <CardGroup style={{ padding: "3%" }}>
           <Card style={{ margin: "0 1%", border: "none" }}>
-            <CardImg top width="10%" src={logo} alt="Card image cap" />
+            <CardImg top width="10%" src={logo1} alt="Card image cap" />
             <CardBody>
               <CardTitle tag="h6">
                 Flying high with the best drone tech : The inspiring tale of
@@ -98,7 +102,7 @@ const Example = (props) => {
             </CardBody>
           </Card>
           <Card style={{ margin: "0 1%", border: "none" }}>
-            <CardImg top width="10%" src={logo} alt="Card image cap" />
+            <CardImg top width="10%" src={logo2} alt="Card image cap" />
             <CardBody>
               <CardTitle tag="h6">
                 Dioxane: A Harmful Pollutant and the Search for its Sensor
@@ -106,7 +110,7 @@ const Example = (props) => {
             </CardBody>
           </Card>
           <Card style={{ margin: "0 1%", border: "none" }}>
-            <CardImg top width="10%" src={logo} alt="Card image cap" />
+            <CardImg top width="10%" src={logo1} alt="Card image cap" />
             <CardBody>
               <CardTitle tag="h6">
                 Breaking a Virus 2: COVIRAP and where it goes from here

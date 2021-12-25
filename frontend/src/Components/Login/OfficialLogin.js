@@ -11,9 +11,8 @@ import {
 	Input,
 	CardSubtitle,
 } from "reactstrap";
-import { Link } from "react-router-dom";
 
-export default function EmailEnter() {
+export default function OfficialLogin() {
 	return (
 		<div className="container-form">
 			<Card className="form">
@@ -23,26 +22,31 @@ export default function EmailEnter() {
 							LOGIN
 						</CardTitle>
 						<CardSubtitle className="header-subtitle">
-							&nbsp;&nbsp;FOR STUDENTS
+							&nbsp;&nbsp;FOR OFFICIALS
 						</CardSubtitle>
 					</div>
 					<br />
 					<br />
 					<Form>
 						<FormGroup>
-							<Label for="exampleEmail">Institute Email-id</Label>
+							<Label for="exampleEmail">User</Label>
 							<Input
-								type="email"
-								name="email"
+								type="text"
+								name="user"
 								id="exampleEmail"
-								placeholder="Institute Email-id"
+								placeholder="Username"
+							/>
+							<Label for="exampleEmail">Password</Label>
+							<Input
+								type="password"
+								name="password"
+								id="exampleEmail"
+								placeholder="Password"
 							/>
 							<br />
-							<Link to="/otp" style={{textDecoration:"none"}}>
-								<Button style={{ backgroundColor: "#727dbd" }} block>
-									Next
-								</Button>
-							</Link>
+							<Button style={{ backgroundColor: "#727dbd" }} block>
+								Login
+							</Button>
 						</FormGroup>
 					</Form>
 				</CardBody>

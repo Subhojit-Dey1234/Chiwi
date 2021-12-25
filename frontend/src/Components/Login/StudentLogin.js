@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-export default function Otp() {
+export default function StudentLogin() {
 	return (
 		<div className="container-form">
 			<Card className="form">
@@ -30,17 +30,17 @@ export default function Otp() {
 					<br />
 					<Form>
 						<FormGroup>
-							<Label for="exampleEmail">Enter the OTP</Label>
+							<Label for="exampleEmail">Institute Email-id</Label>
 							<Input
-								type="text"
-								name="otp"
+								type="email"
+								name="email"
 								id="exampleEmail"
-								placeholder="Enter the OTP"
+								placeholder="Institute Email-id"
 							/>
 							<br />
-							<Link to="/" style={{textDecoration:"none"}}>
+							<Link to="/otp" style={{textDecoration:"none"}}>
 								<Button style={{ backgroundColor: "#727dbd" }} block>
-									Login
+									Next
 								</Button>
 							</Link>
 						</FormGroup>

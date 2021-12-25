@@ -7,6 +7,15 @@
     top: 2vh;
     height: 10vh;
 }
+<<<<<<< Updated upstream
+=======
+.logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+>>>>>>> Stashed changes
 .navbar-el a{
     text-decoration: none;
     color: black;

@@ -10,6 +10,14 @@ export default function Navbar() {
 	}, []);
 	return (
 		<div>
+<<<<<<< Updated upstream
+=======
+			<div>
+				<a href="/" >
+					<img src={logo} alt="logo" className="logo" />
+				</a>
+			</div>
+>>>>>>> Stashed changes
 			<div className="navbar-el">
 				<div
 					className="hamburger"
@@ -33,8 +41,15 @@ export default function Navbar() {
 						<a href="/studentPoint">
 							<li>Student's Point</li>
 						</a>
-						<a href="/login">
-							<li>Login</li>
+						<a href="/loginstudent">
+							<li>
+								Login <small style={{ opacity: 0.6 }}>( for students )</small>{" "}
+							</li>
+						</a>
+						<a href="/loginofficials">
+							<li>
+								Login <small style={{ opacity: 0.6 }}> ( for officials )</small>
+							</li>
 						</a>
 						<a href="/news">
 							<li>News</li>

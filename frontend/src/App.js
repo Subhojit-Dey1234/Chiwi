@@ -4,11 +4,12 @@ import Home from "./Components/Home/Home.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Otp from "./Components/Login/Otp";
 import Images from "./Components/Home/Images";
-import EmailEnter from "./Components/Login/EmailEnter";
 import News from "./Components/News/index";
 import StudentPoint from "./Components/StudentPoint";
 import Navbar from './Components/Navbar/Navbar'
 import Footer from "./Components/Footer/Footer";
+import StudentLogin from "./Components/Login/StudentLogin";
+import OfficialLogin from "./Components/Login/OfficialLogin";
 
 function App() {
 	return (
@@ -18,7 +19,8 @@ function App() {
 			<Router>
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/login" element={<EmailEnter />} />
+					<Route path="/loginstudent" element={<StudentLogin />} />
+					<Route path="/loginofficials" element={<OfficialLogin />} />
 					<Route path="/otp" element={<Otp />} />
 					<Route path="/news" element={<News />} />
 					<Route path="/studentPoint" element={<StudentPoint />} />

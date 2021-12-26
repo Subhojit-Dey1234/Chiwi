@@ -11,19 +11,11 @@ export default function Navbar() {
 	}, []);
 	return (
 		<div>
-<<<<<<< HEAD
 			<div>
 				<a href="/" >
 					<img src={logo} alt="logo" className="logo" />
 				</a>
 			</div>
-=======
-			{/* <div>
-				<a href="/" >
-					<img src={logo} alt="logo" className="logo" />
-				</a>
-			</div> */}
->>>>>>> 8855732e54f148f431494dccbc413e84533b3523
 			<div className="navbar-el">
 				<div
 					className="hamburger"

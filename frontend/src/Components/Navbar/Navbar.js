@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import logo from '../../Images/Log.png'
 import "./style.css";
 export default function Navbar() {
 	const [isHam, setHam] = useState(true);
@@ -10,14 +11,11 @@ export default function Navbar() {
 	}, []);
 	return (
 		<div>
-<<<<<<< Updated upstream
-=======
 			<div>
 				<a href="/" >
 					<img src={logo} alt="logo" className="logo" />
 				</a>
 			</div>
->>>>>>> Stashed changes
 			<div className="navbar-el">
 				<div
 					className="hamburger"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import {
 	Card,
@@ -11,9 +11,23 @@ import {
 	Input,
 	CardSubtitle,
 } from "reactstrap";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { verifyOtp } from "../../actions/Actions";
 
 export default function Otp() {
+	const dispatch = useDispatch();
+	const [otp, setOtp] = useState("");
+	function Login(e) {
+		e.preventDefault();
+		var data = {
+			mail: "subhojit9700dey@gmail.com",
+			otp,
+		};
+
+		dispatch(verifyOtp(data,res=>{
+			console.log(res)
+		}))
+	}
 	return (
 		<div className="container-form">
 			<Card className="form">
@@ -28,7 +42,7 @@ export default function Otp() {
 					</div>
 					<br />
 					<br />
-					<Form>
+					<Form onSubmit={Login}>
 						<FormGroup>
 							<Label for="exampleEmail">Enter the OTP</Label>
 							<Input
@@ -36,13 +50,19 @@ export default function Otp() {
 								name="otp"
 								id="exampleEmail"
 								placeholder="Enter the OTP"
+								onChange={(e)=>{
+									setOtp(e.target.value)
+								}}
 							/>
 							<br />
-							<Link to="/" style={{textDecoration:"none"}}>
-								<Button style={{ backgroundColor: "#727dbd" }} block>
-									Login
-								</Button>
-							</Link>
+							<Button
+								type="submit"
+								style={{ backgroundColor: "#727dbd" }}
+								block
+							
+							>
+								Login
+							</Button>
 						</FormGroup>
 					</Form>
 				</CardBody>

@@ -44,7 +44,9 @@ export default function OfficialLogin() {
 								placeholder="Password"
 							/>
 							<br />
-							<Button style={{ backgroundColor: "#727dbd" }} block>
+							<Button style={{ backgroundColor: "#727dbd" }} block onClick={(e)=>{
+								e.preventDefault()
+							}}>
 								Login
 							</Button>
 						</FormGroup>

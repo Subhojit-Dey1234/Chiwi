@@ -25,7 +25,11 @@ export default function Otp() {
 		};
 
 		dispatch(verifyOtp(data,res=>{
-			console.log(res)
+			if(res.status === 200){
+				if(!localStorage.getItem('access-token')){
+					localStorage.setItem('access-token',res.data.accessToken)
+				}
+			}
 		}))
 	}
 	return (

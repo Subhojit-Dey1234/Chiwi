@@ -42,37 +42,36 @@ router.post("/login", async (req, res) => {
 		var val = Math.floor(1000 + Math.random() * 9000);
 		let info = {
 			from: "pcgaming1882020@gmail.com", // sender address
-			to: mail + ", soumyatarafder624@gmail.com", // list of receivers
+			to: mail, // list of receivers
 			subject: "Otp for Login", // Subject line
 			html: `<h2 style="text-align:center;font-size:35px">DADA BACKEND START KORECHHI EKBR DEKHE NEBEN 😄 </h2><div><h1 style="text-align:center;font-size:40px;border-radius:10px;background:#eaeaff;border:1px dashed black;"> ${val} <h1>`, // html body
 		};
 
-		await transporter.sendMail(info, (err, success) => {
+		await transporter.sendMail(info, async(err, success) => {
 			if (err) {
 				console.log(err);
 			} else {
 				console.log("Success");
+				let verifyObj = await Verify.findOne({
+					mail: mail,
+				});
+				if(verifyObj){
+					verifyObj.otp = val;
+					verifyObj.save().then(()=>res.json({
+						otp : "Otp Send Successfully",
+					}))
+				}
+				else{
+					var verifyD = new Verify({
+						mail : mail,
+						otp : val
+					})
+					verifyD.save().then(()=>res.json({
+						otp : "Otp Send Successfully",
+					}))
+				}
 			}
-		});
-		let verifyObj = await Verify.findOne({
-			mail: mail,
-		});
-		if(verifyObj){
-			verifyObj.otp = val;
-			verifyObj.save().then(item=>res.json({
-				otp : "Otp Send Successfully",
-			}))
-		}
-		else{
-			var verifyD = new Verify({
-				mail : mail,
-				otp : val
-			})
-			verifyD.save().then(()=>res.json({
-				otp : "Otp Send Successfully",
-			}))
-		}
-		
+		});		
 	} catch {
 		res.status(500).send();
 	}

@@ -21,16 +21,13 @@ export default function Otp() {
 	const [otp, setOtp] = useState("");
 	function Login(e) {
 		e.preventDefault();
-		if(userMail)
-			var data = {
-				mail: userMail,
-				otp,
-			};
-
+    
 		dispatch(verifyOtp(data,res=>{
 			if(res.status === 200){
 				if(!localStorage.getItem('access-token')){
-					localStorage.setItem('access-token',res.data.accessToken)
+					console.log("Login Successful", res.data.accessToken);
+					localStorage.setItem('access-token',res.data.accessToken);
+					window.location.href = "/dashboard";
 				}
 			}
 		}))

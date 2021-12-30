@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
-import itemReducer from './itemReducers'
+import userDetails from './userDetails'
 
+console.log(userDetails)
 
 export default combineReducers({
-    item : itemReducer
+    userDetails : userDetails
 })

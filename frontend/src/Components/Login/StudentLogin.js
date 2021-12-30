@@ -21,6 +21,9 @@ export default function StudentLogin() {
 	const [ err , setErr] = useState(false)
 
 	const dispatch = useDispatch()
+
+	const userMail = useSelector((state) => state)
+	console.log(userMail)
 	
 	function GetOtp(e) {
 		e.preventDefault();

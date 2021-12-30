@@ -3,10 +3,10 @@ const router = express.Router();
 const Students = require("../models/Students.js");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
-const Officials = require('./OfficialsLogin')
+const Officials = require("./OfficialsLogin");
 const Verify = require("../models/Verify.js");
 
-router.use('/',Officials)
+router.use("/", Officials);
 
 // For sending Mail
 const transporter = nodemailer.createTransport({
@@ -22,15 +22,12 @@ const transporter = nodemailer.createTransport({
 	},
 });
 
-
-
 router.post("/login", async (req, res) => {
 	let user;
 	await Students.findOne({ mail: req.body.mail }).then((r) => {
 		user = r;
 	});
 	if (user === null) {
-		console.log(user);
 		return res.status(400).send("Cannot find user");
 	}
 	try {
@@ -43,7 +40,7 @@ router.post("/login", async (req, res) => {
 			html: `<h2 style="text-align:center;font-size:35px">Login Otp </h2><div><h1 style="text-align:center;font-size:40px;border-radius:10px;background:#eaeaff;border:1px dashed black;"> ${val} <h1>`, // html body
 		};
 
-		await transporter.sendMail(info, async(err, success) => {
+		await transporter.sendMail(info, async (err, success) => {
 			if (err) {
 				console.log(err);
 			} else {
@@ -51,23 +48,28 @@ router.post("/login", async (req, res) => {
 				let verifyObj = await Verify.findOne({
 					mail: mail,
 				});
-				if(verifyObj){
+				if (verifyObj) {
 					verifyObj.otp = val;
-					verifyObj.save().then(()=>res.json({
-						otp : "Otp Send Successfully",
-					}))
-				}
-				else{
+					verifyObj.save().then(() =>
+						res.json({
+							otp: "Otp Send Successfully",
+							user
+						}),
+					);
+				} else {
 					var verifyD = new Verify({
-						mail : mail,
-						otp : val
-					})
-					verifyD.save().then(()=>res.json({
-						otp : "Otp Send Successfully",
-					}))
+						mail: mail,
+						otp: val,
+					});
+					verifyD.save().then(() =>
+						res.json({
+							otp: "Otp Send Successfully",
+							user
+						}),
+					);
 				}
 			}
-		});		
+		});
 	} catch {
 		res.status(500).send();
 	}
@@ -78,17 +80,23 @@ router.post("/verify", async (req, res) => {
 	const otp = req.body.otp;
 	const user = {
 		mail: mail,
-		otp
+		otp,
 	};
 
-	
-	Verify.findOne({ mail: mail }, function (err, re) {
-		if (re.otp.toString() === otp.toString()) {
-			const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
-			res.json({ accessToken });
-		} else {
-			console.log("Error");
-			res.sendStatus(400)
+	Verify.findOne({ mail: mail }, async function (err, re) {
+		if (err) return err;
+		else {
+			if (re.otp.toString() === otp.toString()) {
+				const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
+				res.json({ accessToken });
+			} else {
+				console.log("Error in OTP");
+				// res.sendStatus(400)
+				res.json({
+					status: 400,
+					message: "Error in OTP",
+				});
+			}
 		}
 	});
 });
@@ -98,7 +106,7 @@ router.post("/deleteOtp", (req, res) => {
 		console.log(err);
 	});
 
-	if(verify) res.send("Otp deleted");
+	if (verify) res.send("Otp deleted");
 });
 
 module.exports = router;

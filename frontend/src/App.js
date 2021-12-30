@@ -11,6 +11,7 @@ import Footer from "./Components/Footer/Footer";
 import StudentLogin from "./Components/Login/StudentLogin";
 import OfficialLogin from "./Components/Login/OfficialLogin";
 import ProtectedRoute from "./ProtectedRoute";
+import Dashboard from "./Components/Dashboard/index";
 import NotFound from "./NotFound";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
 					<Route exact path={"/news"} element={<ProtectedRoute />}>
 						<Route exact path={"/news"} element={<News />} />
 					</Route>
+					<Route path="/dashboard" element={<Dashboard />} />
 				</Routes>
 			</Router>
 

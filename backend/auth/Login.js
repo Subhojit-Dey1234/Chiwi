@@ -83,6 +83,7 @@ router.post("/verify", async (req, res) => {
 
 	
 	Verify.findOne({ mail: mail }, function (err, re) {
+		
 		if (re.otp.toString() === otp.toString()) {
 			const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
 			res.json({ accessToken });

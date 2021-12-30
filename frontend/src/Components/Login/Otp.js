@@ -20,14 +20,16 @@ export default function Otp() {
 	function Login(e) {
 		e.preventDefault();
 		var data = {
-			mail: "subhojit9700dey@gmail.com",
+			mail: "soumyatarafder624@iitkgp.ac.in",
 			otp,
 		};
 
 		dispatch(verifyOtp(data,res=>{
 			if(res.status === 200){
 				if(!localStorage.getItem('access-token')){
-					localStorage.setItem('access-token',res.data.accessToken)
+					console.log("Login Successful", res.data.accessToken);
+					localStorage.setItem('access-token',res.data.accessToken);
+					window.location.href = "/dashboard";
 				}
 			}
 		}))

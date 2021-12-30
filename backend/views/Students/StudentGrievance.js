@@ -1,10 +1,12 @@
 const path = require("path");
 const multer = require("multer");
 const StudentGrievance = require("../../models/StudentGrievance");
+const authenticateUser = require("../../auth/authMiddleware");
+const adminAccessMiddleWare = require("../../auth/adminAccessMiddleware");
 const router = require("express").Router();
 
 // return all the grievances if admin / staffs
-router.get("/", (req, res) => {
+router.get("/", adminAccessMiddleWare, (req, res) => {
 	StudentGrievance.find({}, (err, docs) => {
 		if (err) {
 			res.send(500).json({

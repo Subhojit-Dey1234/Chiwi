@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const Students = require("../models/Students.js");
-// const VerifyBackend = require("../models/Verify.js");
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
+const Officials = require('./OfficialsLogin')
 const Verify = require("../models/Verify.js");
+
+router.use('/',Officials)
 
 // For sending Mail
 const transporter = nodemailer.createTransport({
@@ -20,13 +21,8 @@ const transporter = nodemailer.createTransport({
 		rejectUnauthorized: false,
 	},
 });
-// transporter.sendMail(info,(err,success)=>{
-//     if(err){
-//         console.log(err)
-//     }else{
-//         console.log("Success")
-//     }
-// })
+
+
 
 router.post("/login", async (req, res) => {
 	let user;

@@ -1,11 +1,13 @@
 require("dotenv").config();
 const bcrypt = require('bcrypt')
 const jwt = require("jsonwebtoken");
-const UsersBackend = require('./models/Users.js')
+const Students = require('./models/Students.js')
 const express = require("express");
 const mongoos = require("mongoose")
 const app = express();
 const cors = require('cors');
+const login = require('./auth/Login.js');
+const StudentsData = require("./views/Students/StudentsData.js");
 
 
 app.use(cors());
@@ -20,15 +22,12 @@ mongoos.connect(db,{ useNewUrlParser: true , useUnifiedTopology: true })
 .then(()=>console.log("...Connected"))
 .catch((err)=>console.log("Error",err))
 
-const login = require('./auth/Login.js')
-
-
 app.post('/signup', async (req, res) => {
     try {
       if(!req.body.mail) return res.status(500).send("Invalid User")
       const user = { mail: req.body.mail}
 
-      const newUser = new UsersBackend(user);
+      const newUser = new Students(user);
 
       newUser.save().then(item => res.json({item : item,success:true}))
     } catch (err){
@@ -39,4 +38,5 @@ app.post('/signup', async (req, res) => {
 
 
 app.use('/auth',login)
+app.use('/student',StudentsData);
 app.listen(5000);

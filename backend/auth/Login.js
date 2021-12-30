@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const UsersBackend = require("../models/Users.js");
+const Students = require("../models/Students.js");
 // const VerifyBackend = require("../models/Verify.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -30,7 +30,7 @@ const transporter = nodemailer.createTransport({
 
 router.post("/login", async (req, res) => {
 	let user;
-	await UsersBackend.findOne({ mail: req.body.mail }).then((r) => {
+	await Students.findOne({ mail: req.body.mail }).then((r) => {
 		user = r;
 	});
 	if (user === null) {
@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
 			from: "pcgaming1882020@gmail.com", // sender address
 			to: mail, // list of receivers
 			subject: "Otp for Login", // Subject line
-			html: `<h2 style="text-align:center;font-size:35px">DADA BACKEND START KORECHHI EKBR DEKHE NEBEN 😄 </h2><div><h1 style="text-align:center;font-size:40px;border-radius:10px;background:#eaeaff;border:1px dashed black;"> ${val} <h1>`, // html body
+			html: `<h2 style="text-align:center;font-size:35px">Login Otp </h2><div><h1 style="text-align:center;font-size:40px;border-radius:10px;background:#eaeaff;border:1px dashed black;"> ${val} <h1>`, // html body
 		};
 
 		await transporter.sendMail(info, async(err, success) => {
@@ -79,12 +79,13 @@ router.post("/login", async (req, res) => {
 
 router.post("/verify", async (req, res) => {
 	const mail = req.body.mail;
+	const otp = req.body.otp;
 	const user = {
 		mail: mail,
+		otp
 	};
 
-	const otp = req.body.otp;
-
+	
 	Verify.findOne({ mail: mail }, function (err, re) {
 		if (re.otp.toString() === otp.toString()) {
 			const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
@@ -97,10 +98,11 @@ router.post("/verify", async (req, res) => {
 });
 
 router.post("/deleteOtp", (req, res) => {
-	console.log(req);
-	Verify.deleteOne({ mail: req.body.mail }, function (err, s) {
+	let verify = Verify.deleteOne({ mail: req.body.mail }, function (err, s) {
 		console.log(err);
 	});
+
+	if(verify) res.send("Otp deleted");
 });
 
 module.exports = router;

@@ -14,6 +14,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import Dashboard from "./Components/Dashboard/index";
 import NotFound from "./NotFound";
 
+
 function App() {
 	return (
 		<div>

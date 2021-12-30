@@ -11,19 +11,17 @@ import {
 	Input,
 	CardSubtitle,
 } from "reactstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector} from "react-redux";
 import { verifyOtp } from "../../actions/Actions";
 
 export default function Otp() {
+	const userMail = useSelector((state) => state)
+	console.log(userMail)
 	const dispatch = useDispatch();
 	const [otp, setOtp] = useState("");
 	function Login(e) {
 		e.preventDefault();
-		var data = {
-			mail: "soumyatarafder624@iitkgp.ac.in",
-			otp,
-		};
-
+    
 		dispatch(verifyOtp(data,res=>{
 			if(res.status === 200){
 				if(!localStorage.getItem('access-token')){

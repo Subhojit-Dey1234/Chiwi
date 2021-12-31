@@ -30,13 +30,12 @@ function App() {
 					<Route exact path={"/studentPoint"} element={<ProtectedRoute />}>
 						<Route path="/studentPoint" element={<StudentPoint />} />
 					</Route>
+					<Route exact path={"/news"} element={<News />} />
 					<Route exact path={"/news"} element={<ProtectedRoute />}>
-						<Route exact path={"/news"} element={<News />} />
+						<Route path="/dashboard" element={<Dashboard />} />
 					</Route>
-					<Route path="/dashboard" element={<Dashboard />} />
 				</Routes>
 			</Router>
-
 			<br />
 			<br />
 			<Footer />

@@ -90,12 +90,13 @@ router.post("/verify", async (req, res) => {
 				const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
 				res.json({ accessToken });
 			} else {
-				console.log("Error in OTP");
 				// res.sendStatus(400)
-				res.json({
-					status: 400,
-					message: "Error in OTP",
-				});
+				// res.json({
+				// 	status: 400,
+				// 	message: "Error in OTP",
+				// });
+
+				res.status(400).send("Error in OTP")
 			}
 		}
 	});

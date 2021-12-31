@@ -12,26 +12,26 @@ import {
 	CardSubtitle,
 	Alert,
 } from "reactstrap";
-import axios from "axios";
+import loader from '../../Images/loader.gif'
 import { loginStudent } from "../../actions/Actions";
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 export default function StudentLogin() {
 	const [email, setEmail] = useState("");
 	const [ msg , setMsg] = useState(false)
+	const [ load , setLoad] = useState(false)
 	const [ err , setErr] = useState(false)
 
 	const dispatch = useDispatch()
 
-	const userMail = useSelector((state) => state)
-	console.log(userMail)
-	
 	function GetOtp(e) {
 		e.preventDefault();
+		setLoad(true)
 		let data = {
 			mail : email
 		}
 		dispatch(loginStudent(data,res=>{
 			if(res.status === 200){
+				setLoad(false);
 				setMsg(true)
 				setInterval(()=>{
 					window.location.href = '/otp'
@@ -39,6 +39,7 @@ export default function StudentLogin() {
 			}
 			let interval;
 			if(res.status === 400){
+				setLoad(false);
 				setErr(true)
 				clearInterval(interval)
 				interval = setInterval(()=>{
@@ -46,11 +47,16 @@ export default function StudentLogin() {
 				},5000)
 			}
 		}));
+
+
 	}
 
 	return (
+		<div>
+			<div className="loader" style={{ display : load ? "block" : "none"}}>
+			<img  src={loader} alt="loader"/>
+			</div>
 		<div className="container-form">
-			
 			<Card className="form">
 				<Alert style={{display: msg ? "block" : "none" }}>Otp Send Successfully</Alert>
 				<Alert color="danger" style={{display: err ? "block" : "none" }}>Email is not registered in Database</Alert>
@@ -90,6 +96,7 @@ export default function StudentLogin() {
 					</Form>
 				</CardBody>
 			</Card>
+		</div>
 		</div>
 	);
 }

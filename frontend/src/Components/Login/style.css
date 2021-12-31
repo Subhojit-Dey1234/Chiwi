@@ -5,7 +5,18 @@
     transform:translate(-50%,-50%);
     border: none !important;
 }
-
+.loader{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+.loader img{
+    position: relative;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%,-50%);
+}
 .container-form{
     width: 500px;
     height: 500px;

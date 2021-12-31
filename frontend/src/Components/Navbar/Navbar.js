@@ -3,6 +3,7 @@ import logo from '../../Images/Log.png'
 import "./style.css";
 export default function Navbar() {
 	const [isHam, setHam] = useState(true);
+	const isAuthenticated = localStorage.getItem("access-token")
 	const navEl = useRef(null);
 	useEffect(() => {
 		if (window.innerWidth < 700) {
@@ -39,18 +40,23 @@ export default function Navbar() {
 						<a href="/studentPoint" style={{textDecoration:"none", color:"black"}}>
 							<li>Student's Point</li>
 						</a>
-						<a href="/loginstudent" style={{textDecoration:"none", color:"black"}}>
+						<a href="/loginstudent" style={{textDecoration:"none", color:"black", display:isAuthenticated ? "none" : ""}}>
 							<li>
 								Login <small style={{ opacity: 0.6 }}>( Students )</small>{" "}
 							</li>
 						</a>
-						<a href="/loginofficials" style={{textDecoration:"none", color:"black"}}>
+						<a href="/loginofficials" style={{textDecoration:"none", color:"black" , display:isAuthenticated ? "none" : ""}}>
 							<li>
 								Login <small style={{ opacity: 0.6 }}> ( Officials )</small>
 							</li>
 						</a>
 						<a href="/news" style={{textDecoration:"none", color:"black"}}>
 							<li>News</li>
+						</a>
+						<a className="logout" href="/" onClick={()=>{
+							localStorage.clear();
+						}} style={{textDecoration:"none", color:"black", display:!isAuthenticated ? "none" : ""}}>
+							<li>Logout</li>
 						</a>
 					</ul>
 				</div>

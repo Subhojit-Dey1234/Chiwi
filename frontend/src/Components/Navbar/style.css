@@ -7,6 +7,14 @@
     top: 2vh;
     height: 10vh;
 }
+.logout li{
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    color: white;
+}
+.logout li:hover{
+    background-color: rgb(0, 0, 0) !important;
+}
 .logo{
     position: absolute;
     top: 0;

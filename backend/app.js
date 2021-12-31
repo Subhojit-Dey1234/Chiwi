@@ -36,6 +36,13 @@ app.post('/signup', async (req, res) => {
     }
   })
 
+if(process.env.NODE_ENV === "production"){
+  app.use(express.static('../frontend/build'))
+
+  app.get('*',(req,res)=>{
+      res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+  })
+}
 
 app.use('/auth',login)
 app.use('/student',StudentsData);

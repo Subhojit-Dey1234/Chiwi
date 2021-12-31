@@ -14,7 +14,7 @@ import {
 } from "reactstrap";
 import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
-import logo3 from "./logo3.png";
+// import logo3 from "./logo3.png";
 import logo4 from "./logo4.png";
 import { Row, Col } from "reactstrap";
 import Carousel from "react-multi-carousel";
@@ -22,7 +22,6 @@ import "react-multi-carousel/lib/styles.css";
 import main from "../../Images/FormImage.png";
 const responsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 5,
   },
@@ -82,7 +81,7 @@ const Example = (props) => {
                 {eventDescription}
                 <br />
                 <a
-                  href="#"
+                  href="/"
                   style={{ color: "#727dbd", textDecoration: "none" }}
                 >
                   View More

@@ -23,7 +23,7 @@ function App() {
 			<Router>
 				<Routes>
 					<Route path = "*" element={<NotFound/>}/>
-					<Route path="/" element={<Home />} />
+					<Route path="/home" element={<Home />} />
 					<Route path="/loginstudent" element={<StudentLogin />} />
 					<Route path="/loginofficials" element={<OfficialLogin />} />
 					<Route path="/otp" element={<Otp />} />
@@ -31,7 +31,7 @@ function App() {
 						<Route path="/studentPoint" element={<StudentPoint />} />
 					</Route>
 					<Route exact path={"/news"} element={<News />} />
-					<Route exact path={"/news"} element={<ProtectedRoute />}>
+					<Route exact path={"/dashboard"} element={<ProtectedRoute />}>
 						<Route path="/dashboard" element={<Dashboard />} />
 					</Route>
 				</Routes>

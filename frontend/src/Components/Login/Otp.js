@@ -38,7 +38,7 @@ export default function Otp() {
 						setLoad(false);
 						if (!localStorage.getItem("access-token")) {
 							localStorage.setItem("access-token", res.data.accessToken);
-							window.location.href = "/";
+							window.location.href = "/dashboard";
 						}
 					}
 

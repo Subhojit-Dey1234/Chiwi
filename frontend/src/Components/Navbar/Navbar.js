@@ -13,7 +13,7 @@ export default function Navbar() {
 	return (
 		<div>
 			<div>
-				<a href="/" >
+				<a href="/home" >
 					<img src={logo} alt="logo" className="logo" />
 				</a>
 			</div>
@@ -34,10 +34,13 @@ export default function Navbar() {
 					style={{ visibility: isHam ? "visible" : "hidden" }}
 				>
 					<ul>
-						<a href="/" style={{textDecoration:"none", color:"black"}}>
+						<a href="/home" style={{textDecoration:"none", color:"black", display:isAuthenticated ? "none" : ""}}>
 							<li>Home</li>
 						</a>
-						<a href="/studentPoint" style={{textDecoration:"none", color:"black"}}>
+						<a href="/dashboard" style={{textDecoration:"none", color:"black" , display:isAuthenticated ? "" : "none"}}>
+							<li>Dashboard</li>
+						</a>
+						<a href="/studentPoint" style={{textDecoration:"none", color:"black",display:isAuthenticated ? "" : "none"}}>
 							<li>Student's Point</li>
 						</a>
 						<a href="/loginstudent" style={{textDecoration:"none", color:"black", display:isAuthenticated ? "none" : ""}}>
@@ -53,9 +56,10 @@ export default function Navbar() {
 						<a href="/news" style={{textDecoration:"none", color:"black"}}>
 							<li>News</li>
 						</a>
-						<a className="logout" href="/" onClick={()=>{
+						
+						<a className="logout" href="/home" onClick={()=>{
 							localStorage.clear();
-						}} style={{textDecoration:"none", color:"black", display:!isAuthenticated ? "none" : ""}}>
+						}} style={{textDecoration:"none", color:"black", display:isAuthenticated ? "" : "none"}}>
 							<li>Logout</li>
 						</a>
 					</ul>
